@@ -21,10 +21,12 @@ Route::get('/aboutme', function () {
 
 // Add Controller
 Route::get('/add', 'addController@index')->name('add');
-Route::resource('ajax-crud', 'addController');
+Route::post('/insert', 'addController@insertdata')->name('insert');
 
 // Change Controller
 Route::get('/change', 'changeController@index')->name('change');
+Route::get('/change/edit', 'changeController@updatedata')->name('editSiswa');
+Route::get('/change/delete/{proposalId}', 'changeController@deletedata')->name('deleteSiswa');
 
 // View Controller
 Route::get('/view', 'viewController@index')->name('view');

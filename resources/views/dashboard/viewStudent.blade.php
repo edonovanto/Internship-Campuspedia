@@ -30,20 +30,27 @@
                 </div>
         <div class="contacts-area mg-b-15">
             <div class="container-fluid">
+              @foreach($member as $value)
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
                         <div class="student-inner-std res-mg-b-30">
+
                             <div class="student-img">
-                                <img src="img/student/1.jpg" alt="" />
+                                <img src="img/student/user.png" alt="" />
                             </div>
                             <div class="student-dtl">
-                                <h2>Nama</h2>
-                                <p class="dp">Email : novantoedo@gmail.com</p>
-                                <p class="dp-ag"><b>No Hp:</b> 123456</p>
+                            <tr>
+                              <h2>{{$value->name}}</h2>
+                              <p>Email : {{$value->email}}</p>
+                              <p><b>No Hp:</b>{{$value->nohp}}</p>
+                            </tr>
+
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
 </div>

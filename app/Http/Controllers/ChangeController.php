@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 class ChangeController extends Controller
 {
     public function index(){
-        return view('dashboard.changeStudent');
+        $member = Siswa::all();
+    	return view('dashboard.changeStudent')->with('member',$member); 
     }
 
     public function updatedata(Request $request)
@@ -22,9 +23,12 @@ class ChangeController extends Controller
     	return response()->json($member);
     }
 
-    public function deletedata(Request $request)
+    public function deletedata($proposalId, Siswa $member)
     {
-    	Siswa::where('id',$request->id)->delete();
-    	return response()->json();
+        $member->where('id', $proposalId)
+        ->delete();
+
+        return Redirect::to('change');
+        // return view('welcome', compact('member'));
     }
 }

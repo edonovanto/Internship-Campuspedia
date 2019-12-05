@@ -46,16 +46,22 @@
                                         <th>Phone Number</th>
                                         <th>Setting</th>
                                     </tr>
+                                    @foreach($member as $value)
                                     <tr>
-                                        <td><img src="img/product/book-1.jpg" alt="" /></td>
-                                        <td>Web Development Book</td>
-                                        <td>Html, Css</td>
-                                        <td>CSE</td>
+                                        <td><img src="img/student/user.png" alt="" /></td>
+                                        <td>{{$value->name}}</td>
+                                        <td>{{$value->email}}</td>
+                                        <td>{{$value->nohp}}</td>
                                         <td>
-                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="{{route('editSiswa', ['proposalId' => $value->id])}}">
+                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" id="update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a href="{{route('deleteSiswa', ['proposalId' => $value->id])}}">
+                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" id="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </table>
                             </div>
                             <div class="custom-pagination">
@@ -74,6 +80,42 @@
         </div>
 </div>
         
+<!-- AJAX -->
+<script type="text/javascript">
+// for Update Ajax
+				$('#update').click(function(){
+					$.ajax({
+						type:'post',
+						url: 'updatedata',
+						data:{
+							'_token':$('input[name=_token').val(),
+							'id':$('#upid').val(),
+							'name':$('input[name=upname').val(),
+							'age':$('input[name=upage').val(),
+							'email':$('input[name=upemail').val(),
+							'address':$('input[name=upaddress').val()
+						},
+						success:function(data){
+							window.location.reload();
+						},
+					});
+				});
+
+				// for Delete Ajax
+				$('#delete').click(function(){
+					$.ajax({
+						type:'post',
+						url: 'deletedata',
+						data:{
+							'_token':$('input[name=_token').val(),
+							'id':$('#delid').val(),
+						},
+						success:function(data){
+							window.location.reload();
+						},
+					});
+				});
+			</script>
 
     <!-- jquery
     ============================================ -->

@@ -23,7 +23,7 @@ class AddController extends Controller
     	$member->email = $request->email;
     	$member->nohp = $request->nohp;
     	$member->save();
-    	return response()->json($member);
+    	return view('dashboard.addStudent');
     }
     
 }
