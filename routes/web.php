@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
 Route::get('/aboutme', function () {
     return view('dashboard.aboutme');
@@ -21,6 +21,7 @@ Route::get('/aboutme', function () {
 
 // Add Controller
 Route::get('/add', 'addController@index')->name('add');
+Route::resource('ajax-crud', 'addController');
 
 // Change Controller
 Route::get('/change', 'changeController@index')->name('change');

@@ -17,8 +17,7 @@ class Siswa extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('nohp');
-            $table->string('photo');
+            $table->string('nohp');
             $table->timestamps();
         });
     }
