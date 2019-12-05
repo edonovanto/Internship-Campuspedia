@@ -73,7 +73,7 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <a href="/"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                 <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -83,9 +83,8 @@
                             <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Students" href="all-students.html"><span class="mini-sub-pro">All Students</span></a></li>
-                                <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Student</span></a></li>
-                                <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
-                                <li><a title="Students Profile" href="student-profile.html"><span class="mini-sub-pro">Student Profile</span></a></li>
+                                <li><a title="Add Students" href="{{route('add')}}"><span class="mini-sub-pro">Add Student</span></a></li>
+                                <li><a title="Edit Students" href="{{route('change')}}"><span class="mini-sub-pro">Edit & Delete Student</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -104,7 +103,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="/"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -127,7 +126,6 @@
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
 
-
                                             </ul>
                                         </div>
                                     </div>
@@ -137,12 +135,10 @@
                     </div>
                 </div>
             </div>
+        </div>
             <!-- Mobile Menu start -->
 
-
-            
-        
-        
+            @yield('content_dashboard')
 
         <div class="footer-copyright-area">
             <div class="container-fluid">

@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Add Controller
+Route::get('/add', 'addController@index')->name('add');
+
+// Change Controller
+Route::get('/change', 'changeController@index')->name('change');
