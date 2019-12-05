@@ -82,13 +82,13 @@
                         <li>
                             <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="all-students.html"><span class="mini-sub-pro">All Students</span></a></li>
+                                <li><a title="All Students" href="{{route('view')}}"><span class="mini-sub-pro">All Students</span></a></li>
                                 <li><a title="Add Students" href="{{route('add')}}"><span class="mini-sub-pro">Add Student</span></a></li>
                                 <li><a title="Edit Students" href="{{route('change')}}"><span class="mini-sub-pro">Edit & Delete Student</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a  href="mailbox.html"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">About me</span></a>
+                            <a  href="/aboutme"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">About me</span></a>
                         </li>
            
                     </ul>
