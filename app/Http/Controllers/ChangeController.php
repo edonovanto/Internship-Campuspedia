@@ -13,9 +13,9 @@ class ChangeController extends Controller
     	return view('dashboard.changeStudent')->with('member',$member); 
     }
 
-    public function updatedata(Request $request)
+    public function updatedata($proposalId,Request $request)
     {
-    	$member = Siswa::find($request->id);
+    	$member = Siswa::find($proposalId);
     	$member->name = $request->name;
     	$member->email = $request->email;
     	$member->nohp = $request->nohp;
@@ -29,6 +29,5 @@ class ChangeController extends Controller
         ->delete();
 
         return Redirect::to('change');
-        // return view('welcome', compact('member'));
     }
 }

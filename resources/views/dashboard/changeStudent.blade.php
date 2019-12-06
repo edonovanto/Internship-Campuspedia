@@ -53,10 +53,10 @@
                                         <td>{{$value->email}}</td>
                                         <td>{{$value->nohp}}</td>
                                         <td>
-                                        <a href="{{route('editSiswa', ['proposalId' => $value->id])}}">
+                                        <a href="{{route('edit', ['id' => $value->id])}}">
                                             <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" id="update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                         </a>
-                                        <a href="{{route('deleteSiswa', ['proposalId' => $value->id])}}">
+                                        <a href="{{route('deleteSiswa', ['id' => $value->id])}}">
                                             <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" id="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </a>
                                         </td>

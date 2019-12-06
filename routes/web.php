@@ -20,13 +20,15 @@ Route::get('/aboutme', function () {
 });
 
 // Add Controller
-Route::get('/add', 'addController@index')->name('add');
-Route::post('/insert', 'addController@insertdata')->name('insert');
+Route::get('/add', 'AddController@index')->name('add');
+Route::post('/edit/upload/{id}', 'AddController@uploadedit')->name('update');
+Route::get('/edit{id}', 'AddController@edit')->name('edit');
+Route::post('/insert', 'AddController@insertdata')->name('insert');
+
 
 // Change Controller
-Route::get('/change', 'changeController@index')->name('change');
-Route::get('/change/edit', 'changeController@updatedata')->name('editSiswa');
-Route::get('/change/delete/{proposalId}', 'changeController@deletedata')->name('deleteSiswa');
+Route::get('/change', 'ChangeController@index')->name('change');
+Route::get('/change/delete/{id}', 'ChangeController@deletedata')->name('deleteSiswa');
 
 // View Controller
 Route::get('/view', 'viewController@index')->name('view');

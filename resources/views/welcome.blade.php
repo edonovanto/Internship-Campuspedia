@@ -85,6 +85,7 @@
                                 <li><a title="All Students" href="{{route('view')}}"><span class="mini-sub-pro">All Students</span></a></li>
                                 <li><a title="Add Students" href="{{route('add')}}"><span class="mini-sub-pro">Add Student</span></a></li>
                                 <li><a title="Edit Students" href="{{route('change')}}"><span class="mini-sub-pro">Edit & Delete Student</span></a></li>
+                                <li><span class="mini-sub-pro hidden"></span></li>
                             </ul>
                         </li>
                         <li>
@@ -145,7 +146,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                            <p>Copyright © 2018. All rights reserved. Campuspedia<a href="https://colorlib.com/wp/templates/"></a></p>
                         </div>
                     </div>
                 </div>
