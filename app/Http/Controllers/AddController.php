@@ -16,27 +16,21 @@ class AddController extends Controller
     	return view('dashboard.addStudent')->with('member',$member); 
 	}
 	
-	public function edit($id, Siswa $siswa){
-    $siswa = $siswa->where('id',$id)
-                ->first();
-    return view('dashboard.editStudent',compact('siswa'));
+	public function edit(Request $request, Siswa $siswa){
+		$member = $siswa::find($request->id);
+    	$member->name = $request->upname;
+    	$member->email = $request->upemail;
+    	$member->nohp = $request->upnohp;
+    	$member->save();
+    	return Redirect::to('change');
 	}
 	
-	// public function uploadedit(){
-	// 	return Redirect::to('change');
-	// }
-
-    //For Update Data
-    public function uploadedit(Request $request)
-    {
-		$member = Siswa::find($request->id);
-		echo $member;
-    	// $member->name = $request->name;
-    	// $member->age = $request->age;
-    	// $member->email = $request->email;
-    	// $member->address = $request->address;
-    	// $member->save();
-    	// return response()->json($member);
+    public function uploadedit($id, Siswa $siswa)
+    {	
+		$siswa = $siswa->where('id',$id)
+						->first();
+		
+		return view('dashboard.editStudent',compact('siswa'));
     }
 
     public function insertdata(Request $request)

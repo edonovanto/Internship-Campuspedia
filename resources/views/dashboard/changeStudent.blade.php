@@ -53,7 +53,7 @@
                                         <td>{{$value->email}}</td>
                                         <td>{{$value->nohp}}</td>
                                         <td>
-                                        <a href="{{route('edit', ['id' => $value->id])}}">
+                                        <a href="{{route('update', ['id' => $value->id])}}">
                                             <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" id="update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                         </a>
                                         <a href="{{route('deleteSiswa', ['id' => $value->id])}}">

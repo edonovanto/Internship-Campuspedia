@@ -21,8 +21,8 @@ Route::get('/aboutme', function () {
 
 // Add Controller
 Route::get('/add', 'AddController@index')->name('add');
-Route::post('/edit/upload/{id}', 'AddController@uploadedit')->name('update');
-Route::get('/edit{id}', 'AddController@edit')->name('edit');
+Route::get('/edit/form/{id}', 'AddController@uploadedit')->name('update');
+Route::get('/edit/form/simpan/{id}', 'AddController@edit')->name('edit');
 Route::post('/insert', 'AddController@insertdata')->name('insert');
 
 

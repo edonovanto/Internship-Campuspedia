@@ -1,6 +1,7 @@
-@extends('welcome')
+@extends('welcome',['module' => 'Siswa'])
 
 @section('content_dashboard')
+
 <div class="single-pro-review-area mt-t-30 mg-b-15">
             <div class="container-fluid">
                 <div class="row">
@@ -15,9 +16,9 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 <div id="dropzone1" class="pro-ad">
-                                                    <form role="form" method="post" action="{{route('update')}}" enctype="multipart/form-data">
+                                                    <form action="{{route('edit', ['id' => $siswa->id])}}" role="form" enctype="multipart/form-data">
                                                     {{ csrf_field() }}
-                                                        <div class="row">   
+                                                        <div class="row">  
                                                                 <div class="form-group">
                                                                     <input type="text" class="form-control" id="name" name="upname" placeholder="Fullname" value="{{ old('name', $siswa->name) }}" required>
                                                                 </div>
@@ -28,9 +29,7 @@
                                                                     <input type="text" class="form-control" id="nohp" name="upnohp" placeholder="Phone NUmber" value="{{ old('name', $siswa->nohp) }}" required>
                                                                 </div>   
                                                                 <div class="form-group float-right">
-                                                                    <a href="{{route('update', ['id' => $siswa->id])}}">
                                                                     <button class="btn btn-primary float-right" type="submit" id="update">EDIT</button>
-                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </form>
@@ -46,9 +45,8 @@
             </div>
 </div>
 
-<!-- AJAX -->
 <script type="text/javascript">
-				// for Update Ajax
+// for Update Ajax
 				$('#update').click(function(){
 					$.ajax({
 						type:'post',
@@ -57,15 +55,15 @@
 							'_token':$('input[name=_token').val(),
 							'id':$('$siswa->id').val(),
 							'name':$('input[name=upname').val(),
-							'age':$('input[name=upemail').val(),
-							'email':$('input[name=upnohp').val()
+							'email':$('input[name=upemail').val(),
+							'address':$('input[name=upnohp').val()
 						},
 						success:function(data){
 							window.location.reload();
 						},
 					});
 				});
-</script>
+  </script>
 
         <!-- jquery
 		============================================ -->
@@ -135,4 +133,6 @@
     <!-- tawk chat JS
 		============================================ -->
     <script src="js/tawk-chat.js"></script>
+
+
 @endsection
