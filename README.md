@@ -1,5 +1,5 @@
 ![Campuspedia Internship](https://github.com/edonovanto/Internship-Campuspedia/blob/master/public/img/logo/logo.png)
 
-## About Laravel
+## About This Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A CRUD implementation in Laravel 6.0 with AJAX as the function. For the front-end materials, I'm using Bootstrap 4.0.
